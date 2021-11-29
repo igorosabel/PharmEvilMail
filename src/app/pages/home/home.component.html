@@ -1,1 +1,46 @@
-<p>home works!</p>
+<mat-sidenav-container class="container">
+	<mat-sidenav class="sidebar" #sidenav [(opened)]="opened">
+		<mat-toolbar color="primary">
+			<mat-toolbar-row>
+				<span>PharmEvil</span>
+			</mat-toolbar-row>
+		</mat-toolbar>
+		<mat-nav-list>
+			<a mat-list-item [ngClass]="{'selected': selected=='inbox'}" (click)="selectMails('inbox')">
+				<mat-icon matListIcon>inbox</mat-icon>
+				Bandeja de entrada
+			</a>
+			<a mat-list-item [ngClass]="{'selected': selected=='sent'}" (click)="selectMails('sent')">
+				<mat-icon matListIcon>send</mat-icon>
+				Enviados
+			</a>
+			<a mat-list-item>
+				<mat-icon matListIcon>folder_shared</mat-icon>
+				Archivos
+			</a>
+			<a mat-list-item routerLink="/">
+				<mat-icon matListIcon >power_settings_new</mat-icon>
+				Salir
+			</a>
+		</mat-nav-list>
+	</mat-sidenav>
+
+	<mat-sidenav-content>
+	
+		<mat-toolbar color="primary" class="mat-elevation-z6">
+			<button mat-icon-button (click)="toggleSidenav()">
+				<mat-icon>menu</mat-icon>
+			</button>
+			<span>PharmEvil</span>
+		</mat-toolbar>
+		
+		<mat-nav-list>
+			<a *ngFor="let mail of list" mat-list-item>
+				<mat-icon mat-list-icon>mail</mat-icon>
+				<div mat-line>{{mail.from}}</div>
+				<div mat-line>{{mail.date}}</div>
+			</a>
+		</mat-nav-list>
+
+	</mat-sidenav-content>
+</mat-sidenav-container>
