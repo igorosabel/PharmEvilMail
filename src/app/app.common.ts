@@ -3,12 +3,14 @@
  */
 import { LoginComponent } from './pages/login/login.component';
 import { HomeComponent } from './pages/home/home.component';
+import { DetailComponent } from './pages/detail/detail.component';
 import { VaultComponent } from './pages/vault/vault.component';
 import { BackendComponent } from './pages/backend/backend.component';
 
 export const PAGES: any[] = [
 	LoginComponent,
 	HomeComponent,
+	DetailComponent,
 	VaultComponent,
 	BackendComponent
 ];

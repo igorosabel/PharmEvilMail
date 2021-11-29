@@ -35,10 +35,10 @@
 		</mat-toolbar>
 		
 		<mat-nav-list>
-			<a *ngFor="let mail of list" mat-list-item>
+			<a *ngFor="let mail of list" mat-list-item [routerLink]="['/mail', mail.id]">
 				<mat-icon mat-list-icon>mail</mat-icon>
-				<div mat-line>{{mail.from}}</div>
-				<div mat-line>{{mail.date}}</div>
+				<div mat-line><strong>{{mail.subject}}</strong></div>
+				<div mat-line>{{mail.from}} - {{mail.date}}</div>
 			</a>
 		</mat-nav-list>
 

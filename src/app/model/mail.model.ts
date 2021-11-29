@@ -2,6 +2,7 @@ import { MailInterface } from 'src/app/interfaces/interfaces';
 
 export class Mail {
 	constructor(
+		public id: number = -1,
 		public where: string = '',
 		public from: string = '',
 		public to: string = '',
@@ -12,6 +13,7 @@ export class Mail {
 	
 	toInterface(): MailInterface {
 		return {
+			id: this.id,
 			where: this.where,
 			from: this.from,
 			to: this.to,
